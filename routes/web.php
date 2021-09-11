@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@showHome')->name('home');
 
+Route::get('/about','HomeController@showAbout')->name('about');
+
+Route::get('/products','HomeController@showProduct')->name('products');
+
 
