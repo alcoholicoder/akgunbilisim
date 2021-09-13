@@ -1,11 +1,20 @@
 @extends('layouts.productlayout')
 
 @section('css')
-
+<style>
+    .product-box:hover{
+        box-shadow:0 0 15px #ccc;
+        transition: 0.5s;
+    }
+</style>
 @endsection
 
 
 @section('content')
+
+
+
+
 <div class="row">
     <div class="col-md-12">
         <select class="form-select float-end" aria-label="Default select example" style="max-width: 150px;">
@@ -20,7 +29,7 @@
 
 <div class="row mt-2">
     <div class="col-md-4">
-        <div class="product-box border" style="">
+        <div class="product-box border">
             <div class="row m-0 p-0">
                 <div class="col-md-12 m-0 p-0">
                     <img class="w-100" src="{{asset('/images/products/laptop1.jpg')}}" alt="">

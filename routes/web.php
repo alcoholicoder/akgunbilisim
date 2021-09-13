@@ -22,3 +22,11 @@ Route::get('/about','HomeController@showAbout')->name('about');
 Route::get('/products','HomeController@showProduct')->name('products');
 
 
+
+Route::get('/admin','AdminIndexController@showAdminIndex')->name('adminindex'); // ADMİN ANA SAYFASI //
+
+Route::get('admin/addproduct','AdminIndexController@showAddProduct')->name('adminadd'); // ÜRÜN EKLEME SAYFASI //
+
+Route::get('admin/choosevarriants','AdminIndexController@chooseVarriant')->name('choosevariant'); // ÜRÜNLERE VARİANT BELİRLEME //
+
+Route::post('admin/getproductbycategory','AdminController@AdminGetProductByCategory')->name('getproductsbyid'); // KATEGORİYE GÖRE ÜRÜN GETİRME //
