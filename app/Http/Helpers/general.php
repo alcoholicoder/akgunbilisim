@@ -2,7 +2,7 @@
 
 use App\Models\Products;
 use App\Models\Categories;
-use App\Models\ProductVariants;
+use App\Models\Variants;
 
 
 function getProductNames()
@@ -12,14 +12,14 @@ function getProductNames()
 }
  function getCategoryNames()
 {
-    $categories = Categories::all();
+    $categories = Categories::orderby('category_name')->get();
 
     return $categories;
 }
 function getVariants()
 {
-    $variants = ProductVariants::all();
-
+    $variants = Variants::all();
+    
     return $variants;
 }
 

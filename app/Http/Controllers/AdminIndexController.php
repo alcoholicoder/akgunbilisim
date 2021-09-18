@@ -15,15 +15,7 @@ class AdminIndexController extends Controller
         return view('fronts/admin.index');
     }
 
-    public function showAddProduct()
-    {
-        return view('fronts/admin.addproduct');
-    }
 
-    public function chooseVarriant()
-    {
-        return view('fronts/admin.choosevarriants');
-    }
 
 
 }

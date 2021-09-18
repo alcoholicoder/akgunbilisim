@@ -12,4 +12,10 @@ class Categories extends Model
     protected $table="categories";
     protected $primaryKey="id";
     protected $guarded = [];
+
+    public function variants()
+    {
+        return $this->hasMany(CategoryVariants::class,'category_id','id')->with('variant');
+    }
+
 }
