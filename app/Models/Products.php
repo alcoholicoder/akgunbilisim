@@ -17,14 +17,17 @@ class Products extends Model
     {
         return $this->hasOne(Categories::class, 'id', 'category_id');
     }
-    
-    public function productVariants()
-    {
-        return $this->hasOne(Categories::class, 'id', 'product_id');
-    }
-    
-    
 
+    public function categoryforall()
+    {
+        return $this->hasMany(Categories::class, 'id', 'category_id');
+    }
+
+    
+    public function product_variants()
+    {
+        return $this->hasMany(ProductVariants::class, 'product_id', 'id')->with('variant');
+    }    
 
     public function categoryName()
     {

@@ -5,14 +5,12 @@
             <ul class="menu m-0 p-0">
                 @foreach (getCategoryNames() as $category)
 
-                <li class="border-bottom"><a href="#" style="text-decoration: none;"><i class="bi bi-laptop"></i>
-                        {{$category->category_name}}</a>
-                   <!-- <ul class="m-0 p-0">
-                        <li><a href="#" style="text-decoration: none;">0 Ürünler</a></li>
-                        <li><a href="#" style="text-decoration: none;">2.El Ürünler</a></li>
-                    </ul>
+                <li class="border-bottom">
+                    <a href="{{ url('category/'.$category->id) }}" style="text-decoration: none;">
+                        <i class="bi bi-laptop"></i> {{ $category->category_name }}
+                    </a>
                 </li>
-                !-->
+
                 @endforeach
             </ul>
         </div>

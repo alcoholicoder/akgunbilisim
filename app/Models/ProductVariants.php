@@ -13,6 +13,12 @@ class ProductVariants extends Model
     protected $primaryKey="id";
     protected $guarded = [];
 
-    
+
+    public function variant()
+    {
+        return $this->hasOne(Variants::class, 'id', 'variant_id');
+    }
+
 }
+
 

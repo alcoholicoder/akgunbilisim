@@ -18,4 +18,9 @@ class Categories extends Model
         return $this->hasMany(CategoryVariants::class,'category_id','id')->with('variant');
     }
 
+    public function products()
+    {
+        return $this->hasMany(Products::class, 'category_id', 'id');
+    }
+
 }

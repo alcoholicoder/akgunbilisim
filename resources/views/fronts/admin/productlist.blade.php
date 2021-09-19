@@ -46,8 +46,10 @@
                 <td> <input class="form-check-input form-check form-switch mt-3 mb-3" type="checkbox" id="flexSwitchCheckChecked" checked></td>
                 <td>
                   <input type="submit" class="btn btn-warning p-1" value="Kaydet">
-                  <input type="submit" class="btn btn-danger p-1" value="Sil">
-                  <button type="submit" class="btn btn-primary p-1" value="Düzenle">                    
+              
+                  <a href="{{ route('admin.deleteproduct',['id' => $productInfo->id]) }}" class="btn btn-danger">Sil</a>    
+              
+                  <a href="{{ route('admin.editproduct', ['id' => $productInfo->id]) }}" class="btn btn-primary">Düzenle</a>             
                 </td>
               </tr>
             </form>

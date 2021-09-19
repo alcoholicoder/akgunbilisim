@@ -19,24 +19,15 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group mb-3"">
-
-                       
-                        <select class=" form-control" name="variants[]" multiple="multiple" id="variants">
-                    @foreach (getVariants() as $variant)
-                    <option value="{{ $variant->id }}">{{ $variant->value }}</option>
-                    @endforeach
-
+                <div class="form-group mb-3">      
+                    <select class=" form-control" name="variants[]" multiple="multiple" id="variants">
+                        @foreach (getVariants() as $variant)
+                        <option value="{{ $variant->id }}">{{ $variant->value }}</option>
+                        @endforeach
                     </select>
-
                 </div>
-                <input type="submit" class="btn btn-success" value="Özellik Ekle">
+                <input type="submit" name="submitbutton" class="btn btn-success" value="Değişiklikleri Kaydet">
             </form>
-
-
-
-
-
         </div>
     </div>
 </div>
@@ -77,7 +68,7 @@
                     if (i == 0) {
                         $("#variants").html("");
                         $("#variants").select2("destroy");
-                    // HER YENİ KATEGORİ SEÇİLDİĞİNDE TABLOYU YIKIP YENİDEN OLUŞTURUYORUM //
+                        // HER YENİ KATEGORİ SEÇİLDİĞİNDE TABLOYU YIKIP YENİDEN OLUŞTURUYORUM //
                     }
                     var allVariants = {
                         id: allVariantsList[i].id,
@@ -109,8 +100,6 @@
             }
         });
     }
-
-    /******************************************************/
 
 </script>
 

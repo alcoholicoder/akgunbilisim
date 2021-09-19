@@ -21,8 +21,8 @@
     </div>
 
     <div class="row mt-2">
-        @if ( count($products) > 0 )
-            @foreach ($products as $product)
+        @if ( count($category->products) > 0 )
+            @foreach ($category->products as $product)
                 @include('fronts.components.products.single-product', ['product' => $product])
             @endforeach
         @else

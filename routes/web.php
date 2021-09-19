@@ -15,58 +15,53 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/','HomeController@showHome')->name('home');
-
-Route::get('/about','HomeController@showAbout')->name('about');
-
-Route::get('/products','HomeController@showProduct')->name('products');
-
-
-
-
-
-
-
-
-
-
+Route::get('/category/{id?}','CategoriesController@category')->name('category');
 Route::get('/admin','AdminIndexController@showAdminIndex')->name('adminindex'); // ADMİN ANA SAYFASI //
 
-Route::get('admin/addproduct','AdminController@showAddProduct')->name('adminadd'); // ÜRÜN EKLEME SAYFASI //
-Route::post('admin/addproduct','ProductController@addProduct');
-
-Route::post('admin/editproduct','ProductController@editProduct');
 
 
+// WEBSİTESİ ÖN YÜZ ROUTELERI
+
+Route::get('/','HomeController@showHome')->name('home');
+Route::get('/about','HomeController@showAbout')->name('about');
+Route::get('/products','HomeController@showProduct')->name('products');
+Route::get('/product/{name?}','HomeController@showProductById')->name('productsbyid');
+
+// ADMİN ÜRÜN VARİANT ROUTES //
 
 Route::get('admin/choosevarriants','AdminController@chooseVarriant')->name('choosevariant'); // ÜRÜNLERE VARİANT BELİRLEME //
-
 Route::post('admin/choosevarriants','AdminController@addVarriants'); // ÜRÜNLERE VARİANT EKLEME //
+
+
+
+
+
+
 
 
 
 Route::get('admin/createvariant','AdminController@createVariantPage')->name('admin.create.variant'); // YENİ VARİANT OLUŞTURMA SAYFASI//
 Route::post('admin/createvariant','AdminController@createVariant'); // YENİ VARİANT OLUŞTURMA //
+Route::get('admin/deletevariant','AdminController@deleteVariant')->name('admin.delete.variant');
 
 
+
+
+
+// ADMİN PRODUCTS ROUTES //
+
+Route::get('admin/addproduct','AdminController@showAddProduct')->name('adminadd'); // ÜRÜN EKLEME SAYFASI //
+Route::post('admin/addproduct','ProductController@addProduct'); // ÜRÜN EKLE BUTONU //
 Route::get('admin/productlist','ProductController@productList')->name('admin.productlist'); // KAYITLI OLAN BÜTÜN ÜRÜNLERİ LİSTELİYOR
-
 Route::post('admin/productlist','ProductController@updateProduct'); // ÜRÜN DEĞİŞİKLİKLERİNİ GÜNCELLİYORUZ
+Route::get('admin/deleteproduct','ProductController@deleteProduct')->name('admin.deleteproduct'); // ÜRÜN SİL
+Route::get('admin/editproduct','ProductController@editProduct')->name('admin.editproduct'); // ÜRÜN GÜNCELLEME SAYFASI //
+
+
+
 
 
 
 
 Route::post('admin/getvariantsofcategory','AdminController@getvariantsofcategory'); // KATEGORİ SEÇTİĞİNDE O KATEGORİYE AİT DAHA ÖNCEDEN EKLENMİŞ VARİANTLARI SEÇİLİ OLARAK OTOMATİK GÖSTERİCEZ //
-
-
-
-
-
-
-
-
-
-
-
-
 Route::post('admin/getproductbycategory','AdminController@AdminGetProductByCategory')->name('getproductsbyid'); // KATEGORİYE GÖRE ÜRÜN GETİRME //
