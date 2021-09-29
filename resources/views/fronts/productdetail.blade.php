@@ -38,6 +38,13 @@
 
             <div class='col-sm-12 col-12'>
                 <div class='input-group mb-3'>
+                    <span class='input-group-text' style='min-width: 130px;'>Marka</span>
+                    <span name='variant_name[]' autocomplete='off' class='form-control'>{{$product->brandnames->brand_name}}</span>
+                </div>
+            </div>
+
+            <div class='col-sm-12 col-12'>
+                <div class='input-group mb-3'>
                     <span class='input-group-text' style='min-width: 130px;'>Durumu</span>
                     <span name='variant_name[]' autocomplete='off' class='form-control'>Sıfır</span>
                 </div>
@@ -65,8 +72,15 @@
                     class='form-control'>{{$variants->variant_name}}</span>
             </div>
         </div>
-
         @endforeach
+
+        <div class='col-sm-12 col-12'>
+            <div class='input-group mb-3'>
+                <span class='input-group-text' style='min-width: 130px;'>Açıklama</span>
+                <span name='variant_name[]' autocomplete='off' class='form-control'>{{$product->note}}</span>
+            </div>
+        </div>
+
         {{-- <span class='input-group-text' style='min-width: 130px;'>{{$product->product_variants->variant->value }}</span>
         <span name='variant_name[]' autocomplete='off'
             class='form-control'>{{$product->product_variants->variant_name}}</span> --}}

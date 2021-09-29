@@ -22,7 +22,7 @@
             <button type="submit" class="btn btn-success float-end mb-3" >Yeni Ekle</button>
             @foreach ($variants as $variant)
             <tr id={{$variant->id}}>
-                <th scope="row">1</th>
+                <th scope="row" style="width:50px;">1</th>
                 <td>{{$variant->value}}</td>
                 <td><a href ="{{route('admin.delete.variant', ['id' => $variant->id] ) }}" type="submit" class="btn btn-danger" style="width:70px;">Sil</td>
             </tr>

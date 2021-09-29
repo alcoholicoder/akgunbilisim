@@ -13,21 +13,12 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="pills-profile-tab" type="button" href="{{route('products')}}">ÜRÜNLER</a>
                     </li>
+                    <li class="nav-item" role="presentation">
+
+                        <a class="nav-link active" id="pills-home-tab" type="button" href="" >HİZMETLERİMİZ</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">İKİNCİ EL LAPTOPLAR</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">AĞ ÜRÜNLERİ</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">MONİTÖRLER</button>
+                        <a class="nav-link active" id="pills-home-tab" type="button" href="" >İLETİŞİM</a>
                     </li>
                 </ul>
 

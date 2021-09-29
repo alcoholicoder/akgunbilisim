@@ -44,8 +44,8 @@ Route::get('admin/createvariant','AdminController@createVariantPage')->name('adm
 Route::post('admin/createvariant','AdminController@createVariant'); // YENİ VARİANT OLUŞTURMA //
 Route::get('admin/deletevariant','AdminController@deleteVariant')->name('admin.delete.variant');
 
-
-
+Route::get('admin/createbrand','AdminController@createBrandPage')->name('admin.create.brand');
+Route::post('admin/createbrand','AdminController@createBrand'); // YENİ MARKA OLUŞTURMA //
 
 
 // ADMİN PRODUCTS ROUTES //
@@ -53,7 +53,7 @@ Route::get('admin/deletevariant','AdminController@deleteVariant')->name('admin.d
 Route::get('admin/addproduct','AdminController@showAddProduct')->name('adminadd'); // ÜRÜN EKLEME SAYFASI //
 Route::post('admin/addproduct','ProductController@addProduct'); // ÜRÜN EKLE BUTONU //
 Route::get('admin/productlist','ProductController@productList')->name('admin.productlist'); // KAYITLI OLAN BÜTÜN ÜRÜNLERİ LİSTELİYOR
-Route::post('admin/productlist','ProductController@updateProduct'); // ÜRÜN DEĞİŞİKLİKLERİNİ GÜNCELLİYORUZ
+Route::post('admin/productlist','ProductController@basicUpdate'); // ÜRÜN DEĞİŞİKLİKLERİNİ GÜNCELLİYORUZ
 Route::get('admin/deleteproduct','ProductController@deleteProduct')->name('admin.deleteproduct'); // ÜRÜN SİL
 Route::get('admin/editproduct','ProductController@editProduct')->name('admin.editproduct'); // ÜRÜN GÜNCELLEME SAYFASI //
 
@@ -65,3 +65,9 @@ Route::get('admin/editproduct','ProductController@editProduct')->name('admin.edi
 
 Route::post('admin/getvariantsofcategory','AdminController@getvariantsofcategory'); // KATEGORİ SEÇTİĞİNDE O KATEGORİYE AİT DAHA ÖNCEDEN EKLENMİŞ VARİANTLARI SEÇİLİ OLARAK OTOMATİK GÖSTERİCEZ //
 Route::post('admin/getproductbycategory','AdminController@AdminGetProductByCategory')->name('getproductsbyid'); // KATEGORİYE GÖRE ÜRÜN GETİRME //
+
+Route::post('/listallproductbybrand','ProductController@listProductById')->name('listgroductbyid');
+
+
+Route::post('/listproductbybrandalloncurrentcategory','CategoriesController@getProductsByBrand')->name('getproductbybrand');
+

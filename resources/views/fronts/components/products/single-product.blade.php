@@ -6,14 +6,22 @@
             <div class="col-md-12 m-0 p-0">
                 <img class="w-100" src="{{ asset('/images/products/laptop1.jpg') }}" alt="">
             </div>
-            <div class="row">
-                <h4 class="text-center" style="color: #233772;">{{ $product->product_name }}</h4>
+            <div class="row" style="">
+                <h4 class="text-center " style="color: #233772; ">{{ $product->product_name }}</h4>
             </div>
-            <div class="row">
+            <div class="row" style="min-height: 120px; max-height: 120px;">
                 <div class="col-md-12">
-                    @foreach ($product->product_variants as $product_variant)
+                    @php
+                        $count=0;
+                    @endphp
+                    @foreach ($product->product_variants as $product_variant)             
+                    @if ($count<5) <!--EN FAZLA PRODUCT CARDA 5 ÖZELLİK YAZDIRIYORUM !-->
                         <i class="bi bi-arrow-right-circle-fill ps-3" style="display: inline;"> </i>
                         <span class="p-2" style="color:grey;">{{ $product_variant->variant_name }}</span><br>
+                    @endif
+                        @php
+                        $count++;
+                        @endphp                      
                     @endforeach
                 </div>
             </div>

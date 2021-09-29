@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brands;
 use App\Models\Products;
 use App\Models\Categories;
 use App\Models\Variants;
@@ -21,6 +22,12 @@ function getVariants()
     $variants = Variants::all();
     
     return $variants;
+}
+function getBrands()
+{
+    $brands= Brands::all();
+
+    return $brands;
 }
 
 ?>

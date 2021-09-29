@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use App\Models\Categories;
 use App\Models\Variants;
+use App\Models\Brands;
 use App\Models\CategoryVariants;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -100,7 +101,7 @@ class AdminController extends Controller
         $newVariant->value = $request->new_variant;
         $newVariant->save();
 
-        return redirect()->back()->with('message', 'Yeni Özellik Başarıyla');
+        return redirect()->back()->with('message', 'Yeni Özellik Başarıyla Eklendi');
     }
     public function deleteVariant(Request $request)
     {   
@@ -110,5 +111,23 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Özellik Başrıyla Silindi');
 
+    }
+
+    public function createBrandPage()
+    {
+        $brands = Brands::paginate(15);
+
+        return view('fronts/admin/create_brand')->with('brands', $brands);
+    }
+
+     public function createBrand(Request $request)
+    {
+       
+         $newBrand = new Brands();
+         $newBrand->brand_name = $request->new_brand;
+         $newBrand->save();
+ 
+
+        return redirect()->back()->with('message', 'Yeni Marka Başarıyla Eklendi');
     }
 }

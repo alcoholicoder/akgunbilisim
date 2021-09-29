@@ -173,7 +173,8 @@
                                 <ul class="m-0 p-0">
                                     <li><a href="{{route('admin.productlist')}}" style="text-decoration: none;">Ürünleri Listele</a></li>
                                     <li><a href="{{route('adminadd')}}" style="text-decoration: none;">Yeni Ürün Ekle</a></li>       
-                                    <li><a href="{{route('admin.create.variant')}}" style="text-decoration: none;">Özellik Tanıt</a></li>                                  
+                                    <li><a href="{{route('admin.create.variant')}}" style="text-decoration: none;">Özellik Tanıt</a></li>  
+                                    <li><a href="{{route('admin.create.brand')}}" style="text-decoration: none;">Marka Tanıt</a></li>                                
                                 </ul>
                             </li>
                             <li class="border-bottom"> <a href="{{route('adminadd')}}" class="list-group-item list-group-item-action bg-transparent fw-bold"><i

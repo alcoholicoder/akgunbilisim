@@ -47,11 +47,14 @@ class ProductController extends Controller
    // ÜRÜN EKLEME , ÜRÜN KAYDETME
    public function addProduct(Request $request)
    {
+      
       $product = new Products();
       $product->product_name = $request->product_name;
       $product->category_id = $request->category_id;
       $product->stok = $request->product_stok;
       $product->selling_price = $request->product_price;
+      $product->note = $request->note;
+      $product->brand_id = $request->brand_id;
       $product->save();
 
       $update = Products::where('id', $product->id)->update([
@@ -77,5 +80,17 @@ class ProductController extends Controller
          ->first();
 
       return view('fronts/admin.editproduct', compact('product'));
+   }
+   public function listProductById (Request $request)
+   {
+
+      $brand_id=$request->id;
+      
+      $products = Products::where('brand_id',$brand_id)
+        ->with('product_variants','brandnames')   
+        ->paginate(6);
+
+         
+        return response()->json($products);
    }
 }

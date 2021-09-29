@@ -37,4 +37,8 @@ class Products extends Model
     {
         return $this->selling_price . ' TL';
     }
+    public function brandnames()
+    {
+        return $this->hasOne(Brands::class, 'id','brand_id');
+    }
 }

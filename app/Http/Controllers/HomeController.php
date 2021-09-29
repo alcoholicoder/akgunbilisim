@@ -23,9 +23,9 @@ class HomeController extends Controller
     public function showProduct()
     {
         $products = Products::
-        with('product_variants','categoryforall')   
+        with('product_variants','categoryforall','brandnames')   
         ->paginate(6);
-        
+
         return view('fronts.products',compact('products'));
     }
 
@@ -33,9 +33,9 @@ class HomeController extends Controller
     {
           $perma= $request->name;
           
-          $product = Products::where('permalink',$perma)->with('product_variants')->first();
+          $product = Products::where('permalink',$perma)->with('product_variants','brandnames')->first();
 
-     //  dd($product);
+
    // dd($product->product_variants);
         return view('fronts.productdetail',compact('product'));
     }
