@@ -26,6 +26,7 @@ Route::get('/','HomeController@showHome')->name('home');
 Route::get('/about','HomeController@showAbout')->name('about');
 Route::get('/products','HomeController@showProduct')->name('products');
 Route::get('/product/{name?}','HomeController@showProductById')->name('productsbyid');
+Route::get('/servicez','HomeController@showServices')->name('services');
 
 // ADMİN ÜRÜN VARİANT ROUTES //
 

@@ -15,7 +15,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
 
-                        <a class="nav-link active" id="pills-home-tab" type="button" href="" >HİZMETLERİMİZ</a>
+                        <a class="nav-link active" id="pills-home-tab" type="button" href="{{route('services')}}" >HİZMETLERİMİZ</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="pills-home-tab" type="button" href="" >İLETİŞİM</a>

@@ -18,7 +18,7 @@
 
     <!-- Sidebar Accordion CSS -->
 
-
+    <script src="https://kit.fontawesome.com/771607a42e.js" crossorigin="anonymous"></script>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

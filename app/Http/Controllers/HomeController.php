@@ -32,11 +32,13 @@ class HomeController extends Controller
     public function showProductById(Request $request)
     {
           $perma= $request->name;
-          
           $product = Products::where('permalink',$perma)->with('product_variants','brandnames')->first();
-
 
    // dd($product->product_variants);
         return view('fronts.productdetail',compact('product'));
+    }
+    public function showServices()
+    {
+        return view('fronts.services');
     }
 }
