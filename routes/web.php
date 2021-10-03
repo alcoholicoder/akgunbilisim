@@ -38,9 +38,6 @@ Route::post('admin/choosevarriants','AdminController@addVarriants'); // ÜRÜNLE
 
 
 
-
-
-
 Route::get('admin/createvariant','AdminController@createVariantPage')->name('admin.create.variant'); // YENİ VARİANT OLUŞTURMA SAYFASI//
 Route::post('admin/createvariant','AdminController@createVariant'); // YENİ VARİANT OLUŞTURMA //
 Route::get('admin/deletevariant','AdminController@deleteVariant')->name('admin.delete.variant');
@@ -72,3 +69,7 @@ Route::post('/listallproductbybrand','ProductController@listProductById')->name(
 
 Route::post('/listproductbybrandalloncurrentcategory','CategoriesController@getProductsByBrand')->name('getproductbybrand');
 
+
+Route::get('/admin/categories','CategoryController@showCategories')->name('admin.categories');
+Route::post('/admin/categories','CategoryController@createCategory');
+Route::get('/admin/deletecategory','CategoryController@deleteCategory')->name('admin.deletecategory');

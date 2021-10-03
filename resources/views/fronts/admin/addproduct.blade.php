@@ -11,11 +11,12 @@
 @endsection
 @section('content')
 <div class="container">
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row mb-5 mt-5">
             <div class="col-4 mb-5">
-                <img class="w-100" src="{{ asset('/images/products/laptop1.jpg') }}" alt="">
+                <input type="file" id="product_image" class="form-control mb-3" name="image" placeholder="Hizmet Resim">
+                <img class="w-100" src="#" id="preview-img" style="max-height:400px; visibility:hidden;" > 
             </div>
             <div class="col-8 ps-5">
                 <div class="form-group mb-3">
@@ -50,11 +51,9 @@
                                     <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
                                 @endforeach
                             </select>
-                        </div>
-                     
+                        </div>                     
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="row">
@@ -81,9 +80,33 @@
 
 @section('js')
 <script>
-    $(document).ready(function () {
+        function readURL(input) {
+            document.getElementById('preview-img').style.visibility="visible";
+      
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#preview-img').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+           
+        }
+
+    }
+    
+    $("#product_image").change(function(){
+        readURL(this);
+    });
+    $(document).ready(function () {    
         $("#category_id").trigger('change');
     });
+
+
+
+
 
     function category(id) {
         $.ajaxSetup({

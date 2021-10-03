@@ -7,7 +7,7 @@
 
                 <li class="border-bottom">
                     <a href="{{ url('category/'.$category->id) }}" style="text-decoration: none;">
-                        <i class="bi bi-laptop"></i> {{ $category->category_name }}
+                        <i class="fas fa-chevron-right me-2"></i>{{ $category->category_name }}
                     </a>
                 </li>
 

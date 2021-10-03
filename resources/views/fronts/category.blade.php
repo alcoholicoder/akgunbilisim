@@ -9,14 +9,12 @@
     </style>
 @endsection
 @section('content')
-
-
     <div class="row">
         <div class="col-md-12">
 
             <select class="form-select float-start" id="brands" onchange= "listbybrand(this)" aria-label="Default select example" style="max-width: 150px;">
                 <option selected>Marka Seç</option>
-                @foreach ($category->products as $product)
+                @foreach ($category->products->unique('brandnames') as $product)
                      <option value="{{$product->brandnames->id}}" data-value="{{$product->category_id}}">{{$product->brandnames->brand_name}}</option>
                 @endforeach
             </select> <!-- BURADA SEÇİLEN KATEGORİDEKİ ÜRÜNLERİN MARKALERİ SADECE OLUYOR !-->
@@ -69,19 +67,21 @@
             dataType: "JSON",
             data: formData,
             success: function (data) {
-
+             
                  localStorage.setItem("data", JSON.stringify(
                 data)); /* GELEN JSON DATAYI JS DILINE ÇEVİRİYORUZ*/
-                console.log(data[0]);
+              
              $('#productslist').html("");
              $('#productslist2').html("");
                 for(var i =0 ; i<data.length ; i++)
                 {
+                    console.log(data[i].id );
+                    console.log(data[i].image);
                     var html="<div class='col-md-4 mb-4'>"+
                                 "<div class='product-box border'>"+
                                     "<div class='row m-0 p-0'>"+
                                         "<div class='col-md-12 m-0 p-0'>"+
-                                            "<img class='w-100'  src='{{ asset('/images/products/laptop1.jpg') }}'alt=''>"+
+                                            "<img class='w-100'  src='../uploads/product_images/"+data[i].id+"/small/"+data[i].image+"'>"+
                                         "</div>"+
                                         "<div class='row' style=''>"+
                                         "<h4 class='text-center' style='color: #233772;'>" + data[i].product_name + "</h4>"+

@@ -4,13 +4,13 @@
     <div class="product-box border">
         <div class="row m-0 p-0">
             <div class="col-md-12 m-0 p-0">
-                <img class="w-100" src="{{ asset('/images/products/laptop1.jpg') }}" alt="">
+                <img class="w-100" src="{{ asset('uploads/product_images/'.$product->id.'/small/'.$product->image) }}" alt="">
             </div>
-            <div class="row" style="">
+            <div class="row">
                 <h4 class="text-center " style="color: #233772; ">{{ $product->product_name }}</h4>
             </div>
             <div class="row" style="min-height: 120px; max-height: 120px;">
-                <div class="col-md-12">
+                <div class="col-md-12 ">
                     @php
                         $count=0;
                     @endphp

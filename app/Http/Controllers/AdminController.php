@@ -97,36 +97,38 @@ class AdminController extends Controller
 
     public function createVariant(Request $request)
     {
-        $newVariant = new Variants();
-        $newVariant->value = $request->new_variant;
-        $newVariant->save();
-
-        return redirect()->back()->with('message', 'Yeni Özellik Başarıyla Eklendi');
+        $newVariant = $request->new_variant;
+        $checkVariant = Variants::where('value',$newVariant)->first();
+       
+        if($checkVariant == NULL)
+        {
+            $newVariant = new Variants();
+            $newVariant->value = $request->new_variant;
+            $newVariant->save();
+    
+            return redirect()->back()->with('message', 'Yeni Özellik Başarıyla Eklendi');
+        }
+        return redirect()->back()->with('message', 'Böyle Bir Özellik Zaten Tanıtılı');
+    
     }
     public function deleteVariant(Request $request)
-    {   
-      
+    {         
         $variantId= $request->id;
         Variants::where('id',$variantId)->delete();
-
         return redirect()->back()->with('message', 'Özellik Başrıyla Silindi');
 
     }
-
     public function createBrandPage()
     {
         $brands = Brands::paginate(15);
-
         return view('fronts/admin/create_brand')->with('brands', $brands);
     }
 
      public function createBrand(Request $request)
-    {
-       
+    {       
          $newBrand = new Brands();
          $newBrand->brand_name = $request->new_brand;
-         $newBrand->save();
- 
+         $newBrand->save(); 
 
         return redirect()->back()->with('message', 'Yeni Marka Başarıyla Eklendi');
     }

@@ -168,7 +168,7 @@
 
 
                             <li class="border-bottom" style="cursor: pointer;"> <a class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                              class="fas fa-project-diagram me-2"></i>ÜRÜNLER</a>
+                              class="fas fa-project-diagram me-2"></i>ÜRÜN İŞLEMLERİ</a>
                                     
                                 <ul class="m-0 p-0">
                                     <li><a href="{{route('admin.productlist')}}" style="text-decoration: none;">Ürünleri Listele</a></li>
@@ -178,11 +178,11 @@
                                 </ul>
                             </li>
                             <li class="border-bottom"> <a href="{{route('adminadd')}}" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                              class="fas fa-project-diagram me-2"></i>KATEGORİLER</a>
+                              class="fas fa-project-diagram me-2"></i>KATEGORİ İŞLEMLERİ</a>
                                     
                                 <ul class="m-0 p-0">
-                                  <li><a href="#" style="text-decoration: none;">Ürün Kategorileri Listele</a></li>      
-                                    <li><a href="{{route('choosevariant')}}" style="text-decoration: none;">Ürün Kategorisine Özellik Tanıt</a></li>
+                                  <li><a href="{{route('admin.categories')}}" style="text-decoration: none;">Ürün Kategorileri Listele</a></li>      
+                                    <li><a href="{{route('choosevariant')}}" style="text-decoration: none;">Kategorilere Özellik Tanıt</a></li>
                                     <li><a href="#" style="text-decoration: none;">Ürün Kategorisi Düzenle</a></li>                                                                  
                                 </ul>
                             </li>
@@ -195,29 +195,7 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
-                {{-- <a href="{{route('adminindex')}}" class="list-group-item list-group-item-action bg-transparent
-                fw-bold"><i class="fas fa-project-diagram me-2"></i>AKGUN BİLİŞİM</a>
-
-                <a href="{{route('adminadd')}}" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>Ürün Ekle</a>
-
-                <a href="{{route('choosevariant')}}"
-                    class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Variant Belirleme</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Reports</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-shopping-cart me-2"></i>Store Mng</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-gift me-2"></i>Products</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-comment-dots me-2"></i>Chat</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a> --}}
             </div>
         </div>
         <!-- /#sidebar-wrapper -->

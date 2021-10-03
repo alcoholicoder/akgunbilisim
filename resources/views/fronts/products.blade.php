@@ -13,8 +13,8 @@
         <div class="col-md-12">
             <select class="form-select float-start" id="brands" onchange= "listbybrand(this.value)" aria-label="Default select example" style="max-width: 150px;">
                 <option selected>Marka Seç</option>
-                @foreach ($products as $product)
-                     <option value="{{$product->brandnames->id}}" data-value="123">{{$product->brandnames->brand_name}}</option>
+                @foreach ($products->unique('brand_id') as $product)
+                     <option value="{{$product->brandnames->id}}">{{$product->brandnames->brand_name}}</option>
                 @endforeach
             </select>
             <select class="form-select float-end" aria-label="Default select example" style="max-width: 150px;">
@@ -62,18 +62,21 @@
             dataType: "JSON",
             data: formData,
             success: function (data) {
-           console.log(data);
+           console.log(data);           
                 localStorage.setItem("data", JSON.stringify(
                 data)); /* GELEN JSON DATAYI JS DILINE ÇEVİRİYORUZ*/
                 //console.log(data.data[0]);
              $('#productslist').html("");
                 for(var i =0 ; i<data.data.length ; i++)
                 {
+                    console.log(data.data[i].id );
+                    console.log(data.data[i].image);
+
                     var html="<div class='col-md-4 mb-4'>"+
                                 "<div class='product-box border'>"+
                                     "<div class='row m-0 p-0'>"+
-                                        "<div class='col-md-12 m-0 p-0'>"+
-                                            "<img class='w-100'  src='{{ asset('/images/products/laptop1.jpg') }}'alt=''>"+
+                                        "<div class='col-md-12 m-0 p-0'>"+                                       
+                                          "<img class='w-100'  src='uploads/product_images/"+data.data[i].id+"/small/"+data.data[i].image+"'>"+
                                         "</div>"+
                                         "<div class='row' style=''>"+
                                         "<h4 class='text-center' style='color: #233772;'>" + data.data[i].product_name + "</h4>"+
@@ -81,7 +84,7 @@
                                         "<div class='row' style='min-height: 120px; max-height: 120px;'>"+
                                             "<div class='col-md-12'>" ; 
                   
-                   console.log(data.data[0].product_variants[0].variant_name);              
+                   //console.log(data.data[0].product_variants[0].variant_name);              
                                for(var j=0 ; j<data.data[i].product_variants.length ; j++)
                                {
                                    html += "<i class='bi bi-arrow-right-circle-fill ps-3' style='display: inline;''> </i>"+

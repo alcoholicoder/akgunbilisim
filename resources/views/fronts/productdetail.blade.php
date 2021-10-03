@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row ">
         <div class="col-md-5 mt-4 mb-4 ">
-            <img class="w-100" src="{{ asset('/images/products/laptop1.jpg') }}" alt="">
+            <img class="w-100 xzoom" src="{{  asset('uploads/product_images/'.$product->id.'/small/'.$product->image)}}" xoriginal="{{  asset('uploads/product_images/'.$product->id.'/orginal/'.$product->image)}}">
         </div>
         <div class="col-md-7 mt-4 mb-4 ">
 
@@ -93,5 +93,17 @@
 
 
 @section('js')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
 
+<script>
+    $(".xzoom").xzoom({
+    position: 'right',
+    Xoffset: 0,
+    Yoffset:0,
+    defaultScale:0.7,// ZOOM ORANINI -1 , 1 E KADAR OYANYABİLİYORUM
+    zoomWidth:600,
+    zoomHeight:400
+});
+</script>
 @endsection

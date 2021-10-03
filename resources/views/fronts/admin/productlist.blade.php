@@ -27,7 +27,7 @@
                 <form method="POST" id="product-form">
                   @csrf
                 <input type="hidden" name="id" value="{{$productInfo->id}}">
-                <th scope="row"><img src="{{asset('/images/products/laptop1.jpg')}}" style="with:50px; height:70px" alt=""></th>
+                <th scope="row"><img src="{{ asset('uploads/product_images/'.$productInfo->id.'/small/'.$productInfo->image) }}" style="with:50px; height:70px" alt=""></th>
                 <td><input type="text" class="w-100 mt-3 mb-3" name="product_name" style="height:23px; border:0.5px solid #ccc; outline:none" value="{{ $productInfo->product_name }}"></td>
                   <td>
                     <select name="product_category_id" id=""  class="w-100 mt-3 mb-3" style="border:0.5px solid #ccc;">                      

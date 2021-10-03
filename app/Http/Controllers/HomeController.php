@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function showProduct()
     {
         $products = Products::
-        with('product_variants','categoryforall','brandnames')   
+        with('product_variants','categoryforall','brandnames')         
         ->paginate(6);
 
         return view('fronts.products',compact('products'));
